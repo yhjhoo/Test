@@ -31,6 +31,10 @@ public class Department implements Serializable {
     @Column(name = "remarks", length = 60)
     private String remarks;
 
+    @Size(min = 6, max = 60)
+    @Column(name = "remarks1", length = 60)
+    private String remarks1;
+
     @ManyToMany(mappedBy = "departments")
     @JsonIgnore
     private Set<Person> people = new HashSet<>();
@@ -121,5 +125,13 @@ public class Department implements Serializable {
             ", name='" + name + "'" +
             ", remarks='" + remarks + "'" +
             '}';
+    }
+
+    public String getRemarks1() {
+        return remarks1;
+    }
+
+    public void setRemarks1(String remarks1) {
+        this.remarks1 = remarks1;
     }
 }

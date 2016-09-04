@@ -50,6 +50,23 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label class="control-label" for="field_remarks1">Remarks1</label>
+            <input type="text" class="form-control" name="remarks1" id="field_remarks1"
+                   ng-model="vm.department.remarks1"
+                   ng-minlength="6" ng-maxlength="60" />
+            <div ng-show="editForm.remarks1.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.remarks1.$error.minlength" translate-value-min="6">
+                    This field is required to be at least 6 characters.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.remarks1.$error.maxlength">
+                    This field cannot be longer than 60 characters.
+                </p>
+            </div>
+        </div>
+
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
